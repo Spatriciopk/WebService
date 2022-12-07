@@ -1,6 +1,6 @@
 const express=require('express');
 const app=express();
-const port = 3000;
+const port = process.env.PORT || 3001;;
 app.use(express.json());
 
 app.get('/seguros',(req,res)=>{
@@ -8,7 +8,7 @@ app.get('/seguros',(req,res)=>{
 });
 
 app.listen(port,()=>{
-    console.log("Servidor escuchando en el puerto" + port);
+    console.log("Servidor escuchando en el puerto " + ${port});
 })
 
 app.post('/seguros/consulta/:plan/:edad',(req, res)=>{
