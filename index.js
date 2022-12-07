@@ -40,9 +40,18 @@ app.post('/seguros/consulta/:plan/:edad',(req, res)=>{
         }
     }
     else if( edad >=30 && edad <= 65){
-        data.cobertura=25000
+        if(plan == "basic" ||  plan == "advanced"){
+            data.plan=plan;
+            data.cobertura=25000;
+        }
+        else{
+            data.plan=null;
+            data.cobertura=null;
+        }
     }
     else{
+        data.edad=null;
+        data.plan=null;
         data.cobertura=null
     }
     res.send(data);
