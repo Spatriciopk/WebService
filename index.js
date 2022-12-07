@@ -8,7 +8,7 @@ app.get('/seguros',(req,res)=>{
 });
 
 app.listen(port,()=>{
-    console.log("Servidor escuchando en el puerto " + ${port});
+    console.log("Servidor escuchando en el puerto " + port);
 })
 
 app.post('/seguros/consulta/:plan/:edad',(req, res)=>{
